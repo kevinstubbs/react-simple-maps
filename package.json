@@ -1,6 +1,6 @@
 {
-  "name": "react-simple-maps",
-  "version": "3.0.0",
+  "name": "@pubgenius/react-simple-maps",
+  "version": "3.0.1",
   "description": "An svg map chart component built with and for React",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -10,13 +10,11 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -cw",
-    "prepare": "rollup -c",
-    "test": "mocha './tests/**/*.spec.js' --compilers js:babel-core/register"
+    "watch": "rollup -cw"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zcreativelabs/react-simple-maps.git"
+    "url": "git+https://github.com/kevinstubbs/react-simple-maps"
   },
   "keywords": [
     "react",
@@ -41,12 +39,9 @@
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "expect": "^23.5.0",
-    "mocha": "^5.2.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-test-utils": "^0.0.1",
     "rollup": "^2.75.7",
     "rollup-plugin-terser": "^7.0.2"
   },

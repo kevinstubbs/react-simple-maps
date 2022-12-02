@@ -11,6 +11,7 @@ export default function useZoomPan({
   onMoveStart,
   onMoveEnd,
   onMove,
+  zoomEnabled=true,
   translateExtent = [
     [-Infinity, -Infinity],
     [Infinity, Infinity],
@@ -95,10 +96,20 @@ export default function useZoomPan({
       .translateExtent([
         [a1, a2],
         [b1, b2],
-      ])
-      .on("start", handleZoomStart)
+      ]);
+
+    if (zoomEnabled) {
+      zoom.on("start", handleZoomStart)
       .on("zoom", handleZoom)
       .on("end", handleZoomEnd)
+    } else {
+      zoom.on("zoom", null);
+      zoom.on("wheel.zoom", null);
+    }
+
+    // if (panEnabled) {
+    //   zoom.on("start", handleZoomStart)
+    // }
 
     zoomRef.current = zoom
     svg.call(zoom)

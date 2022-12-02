@@ -18,6 +18,7 @@ const ZoomableGroup = forwardRef(
       onMove,
       onMoveEnd,
       className,
+      zoomEnabled = true,
       ...restProps
     },
     ref
@@ -25,6 +26,7 @@ const ZoomableGroup = forwardRef(
     const { width, height } = useContext(MapContext)
 
     const { mapRef, transformString, position } = useZoomPan({
+      zoomEnabled,
       center,
       filterZoomEvent,
       onMoveStart,
@@ -58,6 +60,7 @@ ZoomableGroup.displayName = "ZoomableGroup"
 ZoomableGroup.propTypes = {
   center: PropTypes.array,
   zoom: PropTypes.number,
+  zoomEnabled: PropTypes.bool,
   minZoom: PropTypes.number,
   maxZoom: PropTypes.number,
   translateExtent: PropTypes.arrayOf(PropTypes.array),
