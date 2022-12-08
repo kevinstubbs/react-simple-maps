@@ -102,9 +102,6 @@ export default function useZoomPan({
       zoom.on("start", handleZoomStart)
       .on("zoom", handleZoom)
       .on("end", handleZoomEnd)
-    } else {
-      zoom.on("zoom", null);
-      zoom.on("wheel.zoom", null);
     }
 
     // if (panEnabled) {
